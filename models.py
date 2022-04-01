@@ -1,4 +1,4 @@
-x`"""Models for adopt app."""
+"""Models for adopt app."""
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -24,7 +24,7 @@ class Pet(db.Model):
     id = db.Column(db.Integer,primary_key=True,autoincrement=True) 
     name = db.Column(db.String(50),nullable=False)
     species = db.Column(db.String(30), nullable=False)
-    photo_url = db.Column(db.String,nullable=False,default="")
+    photo_url = db.Column(db.String,nullable=True,default="")
     age = db.Column(db.Text,nullable=False)
     notes = db.Column(db.Text,nullable=True)
     available = db.Column(db.Boolean,default=True)

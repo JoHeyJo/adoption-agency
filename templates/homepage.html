@@ -1,22 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} Homepage {% endblock %} {% block
+content %}
 
-{% block title %} Homepage {% endblock %}
+<h1>Available Pets</h1>
+<a class="btn btn-primary" href="/add">Add new Pet</a>
+{% for pet in pets %}
 
-{% block content %}
+<div id="name" class="col-9 mt-2" style="max-width: 10%">
+  <a href=""> {{pet.name}}</a>
+  <img src="{{pet.photo_url}}" class="img-fluid mt-2" />
+  {% if pet.available %}
+  <b>available</b>
+  {% endif %}
+</div>
 
-  <h1>Available Pets</h1>
-
-  {% for pet in pets %}
-
-  <div id="name">
-    <a href="\">{% pet.name %}</a>
-    <img src="{{pet.photo_url}}">
-    {% if pet.available %}
-      <b>available</b>
-    {% endif %}
-  </div>
-  
-
-  {% endfor %}
-
-{% endblock %}
+{% endfor %} {% endblock %}
