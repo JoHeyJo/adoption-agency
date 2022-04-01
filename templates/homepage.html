@@ -6,7 +6,7 @@ content %}
 {% for pet in pets %}
 
 <div id="name" class="col-9 mt-2" style="max-width: 10%">
-  <a href=""> {{pet.name}}</a>
+  <a href="/{{pet.id}}"> {{pet.name}}</a>
   <img src="{{pet.photo_url}}" class="img-fluid mt-2" />
   {% if pet.available %}
   <b>available</b>
